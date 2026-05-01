@@ -200,8 +200,9 @@ hr {
   display: flex;
   flex-direction: column;
   align-items:center;
+  gap: 1rem;
   background-color: rgb(224, 214, 203);
-  padding:0px;
+  padding: 1rem;
   border-radius: 6px;
   border: 2px solid gray;
   width: 100%;
@@ -300,7 +301,7 @@ article h2::after {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
 
 
