@@ -204,8 +204,8 @@ hr {
   padding:0px;
   border-radius: 6px;
   border: 2px solid gray;
-  width: 75%;
-
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .visitar-sitio::after {
@@ -297,12 +297,11 @@ article h2::after {
 
 #list-interests {
   display: flex;
-  justify-content:space-evenly;
-  align-items: center;
-  gap: 5rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
+
 
 #enlaces-utiles {
   display: flex;
@@ -336,8 +335,23 @@ footer h2 {
   align-items: center;
 }
 
-
-
 a[target="_blank"] {
   color: rgb(179, 86, 86);
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #list-interests {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #about-me {
+    width: 100%;
+  }
 }
