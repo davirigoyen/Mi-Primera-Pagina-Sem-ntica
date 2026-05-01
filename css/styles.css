@@ -91,7 +91,7 @@ hr {
 }
 
 .bold { font-weight: bold; }
-.bold ~ p { font-weight: bold; }
+.bold ~ p { font-weight:bold; }
 
 /* =========================================
    3. LAYOUT PRINCIPAL Y COMPONENTES
@@ -191,6 +191,10 @@ article {
   width: 100%;
 }
 
+#about-me p {
+  color: rgb(33, 48, 48);
+}
+
 #article-title {
   transition: 0.4s;
 }
@@ -221,10 +225,7 @@ article h2::after {
   margin: 0.3rem;
   line-height: 1.30;
   text-align: justify;
-}
-
-article p {
-  color: darkslategray;
+  color: rgb(33, 48, 48);
 }
 
 #paragraph::first-letter {
