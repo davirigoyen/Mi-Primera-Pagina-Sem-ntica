@@ -47,9 +47,9 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 16px;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  justify-content: space-evenly;
 }
 
 nav a {
@@ -349,6 +349,11 @@ a[target="_blank"] {
   main {
     flex-direction: column;
     gap: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 
   #list-interests {
