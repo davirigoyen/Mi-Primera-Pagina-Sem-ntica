@@ -312,10 +312,12 @@ aside input[type="image"] {
 
 #hombreTrabajandoEnPc {
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: 8rem;
+  height: 8rem;
   margin: 0 auto;
   transition: 0.4s ease;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 #hombreTrabajandoEnPc:hover {
