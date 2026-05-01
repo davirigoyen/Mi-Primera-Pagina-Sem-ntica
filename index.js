@@ -1,4 +1,4 @@
-const botones = document.querySelectorAll(".button");
+/*const botones = document.querySelectorAll(".button");
 
 for (let i=0; i <botones.length; i++) {
 
@@ -19,3 +19,19 @@ for (let index=0; index <botones.length; index++) {
     })
 
   }
+
+
+const hombreTrabajando = "./img/work-from-home.png";
+const img = document.getElementById("hombreTrabajandoEnPc");
+console.log(imgHombre);
+
+img.src = hombreTrabajando;
+
+img.addEventListener ("mouseover", function() {
+    img.style.transform = "scale(1.2)";
+});
+
+img.addEventListener ("mouseout", function() {
+    img.style.transform = "scale(1)"
+});
+*/

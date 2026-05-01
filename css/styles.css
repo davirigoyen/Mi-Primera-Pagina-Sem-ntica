@@ -1,6 +1,5 @@
 body {
   font-family: system-ui, Arial, sans-serif;
-  background: #f0f4f8;
   margin: 0;
   color: #232629;
   background-color: #f0f4f8;
@@ -8,7 +7,6 @@ body {
 
 nav {
   padding: 16px;
-  background: #ffffff;
   margin-bottom: 12px;
   border-radius: 3px;
   border: 2px solid gray;
@@ -21,17 +19,25 @@ p {
 }
 
 footer {
+  display: block;
   padding: 16px;
-  background: #ffffff;
   margin-bottom: 12px;
   background-color:rgb(196, 172, 142);
+  text-align: center;
+  color: #7c5d5d;
+  font-size: 0.95rem;
+  font-weight: bold;
 }
 
-header {
+
+#header-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
   padding: 10px;
-  background: #ffffff;
   margin-bottom: 12px;
   background-color:rgb(196, 172, 142);
+  color: #7c5d5d;
   border-radius: 3px;
   border: 3px solid rgb(165, 146, 146);
   text-align: center;
@@ -66,12 +72,10 @@ main {
 
 article {
   flex: 2;
-  background: #f0f4f8;
   background-color: #f0f4f8;
 }
 aside {
   flex: 1;
-  background: #f0f4f8;
   background-color: #f0f4f8;
   border-radius: 8px;
   padding: 16px;
@@ -87,31 +91,40 @@ aside input[type="image"] {
   cursor: pointer;
 }
 
-footer {
-  text-align: center;
-  color: #7c5d5d;
-  font-size: 0.95rem;
-  font-weight: bold;
-}
+
 
 h1 {
   display: flex;
   border: 5px solid rgb(92, 69, 69);
   width: fit-content;
   margin: 0 auto;
+  margin-top: 0.5rem;
   text-align: center;
   justify-content: center;
   border-radius: 10px;
   padding: 2% 2%;
   background-color: rgb(224, 214, 203);
+  transition: 0.4s;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h1:hover {
+  transform: scale(1.15);
+  text-decoration: underline;
+}
+
+#hombreTrabajandoEnPc {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  transition: 0.4s ease;
 }
 
 
-
-h1:hover {
-  transition: 0.4s;
-  transform: scale(1.15);
-  text-decoration: underline;
+#hombreTrabajandoEnPc:hover {
+    transform: scale(1.15);
 }
 
 ::selection {
@@ -127,62 +140,72 @@ a:visited {
   color: rgb(47, 61, 61);
 }
 
+#enlaces-title {
+  transition: 0.5s;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
 
-#emoji-before::before {
+#enlaces-title:hover {
+  font-style: italic;
+}
+
+#enlaces-title::before {
   content:"📌";
 }
 
-.margin {
-  margin-top: 50px;
-  margin-left: 15px;
+hr {
+  width: 100%;
+  height: 0.01rem;
+  border: none;
+  border-top: 1.9px solid #232629;
+  margin: 20px 0;
 }
 
-input[type="image"] {
-  display: flex;
-  width: 70px;
-  height: 70px;
-  margin-top: 35px;
-  margin-left: 35px;
+#list-margin {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem; 
+}
+
+#subtitle {
+  display: inline-flex;
+  align-items:center;
   justify-content: center;
-  align-content: center;
+  gap: 10px;
+  margin-bottom: 3rem;
 }
 
-#emoji-after::after {
-  content: "";
-  display: inline-block;
-  width: 60px;
+.icon {
+  width: 95px;
   height: 60px;
-  background-image: url("/img/pc-img.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-left: 10px;
-  vertical-align: middle;
-    
 }
 
-article img {
+
+#foto-perfil {
   display:block;
   width: 120px;    
   height: auto;
   margin: 0 auto;
+  transition: 0.4s;
 }
 
-article img:hover {
-  transition: 0.4s;
+#foto-perfil:hover {
   transform: scale(1.15);
   border: 2px solid gray;
 }
 
 
 #about-me {
-  display: block;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
   background-color: rgb(224, 214, 203);
   padding:0px;
   border-radius: 6px;
   border: 2px solid gray;
+  width: 75%;
+
 }
 
 .visitar-sitio::after {
@@ -217,13 +240,10 @@ article p {
 h1, h2, h3
  {
   text-align: center;
-  padding: 2rem;
+  margin: 1rem 0;
  }
 
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
+
 
 h2 {
   font-size: 1.5rem;
@@ -263,7 +283,7 @@ header h3 {
 }
 
 #interests-and-hobbies {
-  padding-top: 5px;
+  margin-top: 2px;
 }
 
 article h2 {
@@ -277,42 +297,46 @@ article h2::after {
 
 #list-interests {
   display: flex;
-  justify-content:space-around;
-  margin-bottom: 32px;
-  margin-top: 10px;
+  justify-content:space-evenly;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 #enlaces-utiles {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0px;
   margin-top: 0px ;
   background-color: rgb(224, 214, 203);
   border: 2px solid gray;
   font-size: small;
+}
+
+#article-title {
+    transition: 0.4s;
+}
+
+#article-title:hover {
+  font-style: italic;
+}
+
+#paragraph {
+  margin: 0.3rem;
+  line-height: 1.30;
+}
+
+footer h2 {
+  display: flex;
   justify-content: center;
+  font-weight: bolder;
+  padding: 0.5rem;
   align-items: center;
 }
 
-#enlaces-utiles h2:hover {
-  font-style: italic;
-}
 
-#about-me h2:hover {
-  font-style: italic;
-}
-
-#enlaces-utiles h4 {
-  display: block;
-  justify-content: left;
-}
-
-#contact h2 {
-  font-weight: bolder;
-}
-
-input:focus {
-  border: 2px solid gray;
-}
 
 a[target="_blank"] {
   color: rgb(179, 86, 86);
