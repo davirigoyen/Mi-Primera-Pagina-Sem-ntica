@@ -14,8 +14,8 @@
 
 body {
   font-family: system-ui, Arial, sans-serif;
-  margin: 0;           /* Quitamos el margen externo */
-  padding: 26px;       /* Creamos el marco interno parejo de 26px */
+  margin: 0;           
+  padding: 26px;       
   color: #232629;
   background-color: #c0aaa6;
 }
@@ -101,10 +101,7 @@ hr {
 
 header {
   display: block;
-  /* El padding de 1rem adentro está bien para separar el texto del borde */
   padding: 1rem;       
-  
-  /* Quitamos todos los márgenes externos, el body ya se encarga del espacio */
   margin: 0;           
   height: 250px;
   background-color: rgb(196, 172, 142);
@@ -125,29 +122,21 @@ header {
   transition: 1s; 
 }
 
-/*#subtitle::after {
-  content: url(/img/pc-img.png);
-} */
-
 #subtitle::after {
-  content: ""; /* Se deja vacío pero es obligatorio ponerlo */
+  content: ""; 
   display: inline-block;
   width: 105px; 
   height: 105px;
-  background-image: url("/img/pc-img.png");
-  background-size: contain; /* Ajusta la imagen al tamaño de la caja */
+  background-image: url("../img/pc-img.png"); 
+  background-size: contain; 
   background-repeat: no-repeat;
-  margin-left: 10px; /* Espacio entre el texto y la imagen */
-  vertical-align:text-top;
+  background-position: center; 
+  margin-left: 10px; 
+  vertical-align: text-top;
   transition: 1.8s;
 }
 
-/*.icon {
-  width: 95px;
-  height: 60px;
-}*/
-
-/* --- NAVEGACIÓN (Soluciones Puntos 2 y 3) --- */
+/* --- NAVEGACIÓN--- */
 nav {
   display: block;
   width: 80%;
@@ -192,35 +181,33 @@ nav a {
 
 /* --- CONTENEDOR PRINCIPAL (MAIN) --- */
 main {
-  /* El main debe ser un bloque normal para contener todo */
   display: block; 
   width: 100%;
-  max-width: 1600px; /* Para que no se estire al infinito en pantallas gigantes */
-  /*min-height: 600px; /* Usamos min-height en lugar de height fijo */
-  height: auto;      /* Permite que el contenido empuje el fondo hacia abajo */
+  max-width: 1600px;
+  height: auto;     
   margin: 0;
   background-color: #c0aaa6;
-  text-align: center; /* Centra los inline-blocks y las imágenes */
+  text-align: center;
 }
 
 /* --- ARTICLE: About Me --- */
 
 #about-me-article {
   display: inline-block;
-  vertical-align: top; /* CLAVE: Los alinea desde arriba, no desde abajo */
-  width: 73%; /* 58% para evitar que choquen */
-  height: auto;  /* CAMBIO: Se ajusta al texto, eliminando el hueco */
-  min-height: 450px; /* Opcional: para que no se vean muy pequeños si hay poco texto */
+  vertical-align: top;
+  width: 73%; 
+  height: auto;
+  min-height: 450px;
   background-color: rgb(177, 154, 130);
   border-radius: 6px;
   border: 2px solid gray;
   padding: 1rem;
-  box-sizing: border-box; /* Asegura que el padding no engorde la caja */
+  box-sizing: border-box;
 }
 
 #about-me-article img, aside img {
   display: block;
-  margin: 0 auto; /* Centra las imágenes */
+  margin: 0 auto;
 }
 
 #about-me-article h2, #about-me-article p {
@@ -289,13 +276,12 @@ article h2::after {
   margin: 0 auto;
   border: 2px solid gray;
   padding: 10px 10px 30px;
-  padding-bottom: 30px; /* Damos espacio interno arriba y abajo */
+  padding-bottom: 30px;
   box-sizing: border-box;
   text-align: center;
 }
 
 #interests-section h3 {
-  /* Cambiamos margin por padding para que el color de fondo cubra el espacio */
   padding: 0;
   width: 100%;
   margin: 0 auto;
@@ -330,10 +316,10 @@ article h2::after {
 
 aside {
   display: inline-block;
-  vertical-align: top; /* CLAVE */
-  width: 26%; /* 38% para evitar que choquen */
+  vertical-align: top; 
+  width: 26%; 
   height: auto;
-  min-height: 450px; /* Opcional: para que no se vean muy pequeños si hay poco texto */
+  min-height: 450px; 
   margin-left: 8px;
   background-color: rgb(224, 214, 203);
   border-radius: 10px;
@@ -396,13 +382,13 @@ aside ul {
 footer {
   display: block;
   padding: 16px;
-  width: 100%;         /* Ahora puedes usar el 100% natural */
+  width: 100%;       
   background-color: rgb(196, 172, 142);
   text-align: center;
   color: #7c5d5d;
   font-size: 0.95rem;
   font-weight: bold;
-  margin: 0;           /* Sin márgenes raros abajo */
+  margin: 0;         
 }
 
 
@@ -435,13 +421,13 @@ footer p {
     padding: 15px 5px;
   }
 
-  /* 2. Article y Aside: De inline-block a bloque total */
+  /* 2. Article y Aside */
   #about-me-article, 
   aside {
-    display: block;      /* Esto obliga a que uno se ponga debajo del otro */
-    width: 100%;         /* Ocupan toda la pantalla del celular */
-    min-height: auto;    /* Liberamos la altura mínima */
-    margin: 15px 0;      /* Espacio vertical entre ellos */
+    display: block;      
+    width: 100%;        
+    min-height: auto;   
+    margin: 15px 0;     
   }
 
   /* 3. Encabezado y Subtítulo */
@@ -455,10 +441,11 @@ footer p {
     margin-top: 1.5rem;
   }
 
-  /* El truco para bajar la imagen de la PC sin Flexbox */
-  #subtitle::after {
-    display: block;            /* Convierte la imagen en un bloque */
-    margin: 15px auto 0 auto;  /* La centra y la empuja a la línea de abajo */
+ #subtitle::after {
+    display: block;            
+    width: 105px;    
+    height: 105px;   
+    margin: 15px auto 0 auto;  
   }
 
   /* 4. Navegación: Botones en bloque (apilados) */
@@ -468,12 +455,12 @@ footer p {
   }
 
   .button {
-    display: block;          /* Pone cada botón en su propia línea */
-    width: 80%;              /* No tan anchos para que se vean bien */
-    margin: 15px auto;       /* Centrados con espacio vertical */
+    display: block;          
+    width: 80%;              
+    margin: 15px auto;       
     padding: 12px 0;
-    border: 1px solid rgb(179, 127, 90); /* Borde para que parezcan botones táctiles */
-    background-color: rgba(179, 127, 90, 0.1); /* Ligero fondo */
+    border: 1px solid rgb(179, 127, 90); 
+    background-color: rgba(179, 127, 90, 0.1); 
   }
 
   /* 5. Sección de Intereses */
@@ -483,13 +470,13 @@ footer p {
   }
 
   #interests-section li {
-    display: block;          /* Pone la lista de intereses en vertical */
+    display: block;         
     margin: 15px auto;
   }
 
-  /* 6. Textos: Mejor legibilidad en pantallas estrechas */
+  /* 6. Textos: Mejor legibilidad */
   #paragraph, #paragraph2 {
-    text-align: left; /* El texto justificado en celulares crea huecos horribles */
+    text-align: left; 
     font-size: 1rem;
     padding-left: 0;
     padding-right: 0;
