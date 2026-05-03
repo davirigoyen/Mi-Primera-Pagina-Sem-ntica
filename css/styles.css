@@ -425,64 +425,73 @@ footer p {
 }
 
 /* =========================================
-   4. MEDIA QUERIES (RESPONSIVE)
+   4. MEDIA QUERIES (RESPONSIVE SIN FLEXBOX)
    ========================================= */
 @media (max-width: 768px) {
   
-  /* 1. Liberamos la altura del main para que crezca con el contenido */
+  /* 1. Main y contenedor general */
   main {
     height: auto; 
     padding: 15px 5px;
-    display: block; /* Aseguramos que se comporte como bloque */
   }
 
-  /* 2. El Article y el Aside ahora deben ocupar todo el ancho */
+  /* 2. Article y Aside: De inline-block a bloque total */
   #about-me-article, 
   aside {
-    display: block;    /* Cambiamos de inline-block a block para que salten de línea */
-    width: 98%;        /* Casi el 100% para dejar un pequeño margen */
-    height: auto;      /* Liberamos la altura fija del 70% */
-    margin: 10px auto; /* Los centramos y les damos espacio vertical */
+    display: block;      /* Esto obliga a que uno se ponga debajo del otro */
+    width: 100%;         /* Ocupan toda la pantalla del celular */
+    min-height: auto;    /* Liberamos la altura mínima */
+    margin: 15px 0;      /* Espacio vertical entre ellos */
   }
 
-  /* 3. Ajustes en el Header y Subtítulo para pantallas pequeñas */
+  /* 3. Encabezado y Subtítulo */
   h1 {
-    font-size: 1.5rem;
-    width: 90%;
+    font-size: 2rem;
+    width: 100%;
   }
 
   #subtitle {
     font-size: 1.2rem;
-    gap: 5px;
+    margin-top: 1.5rem;
   }
 
-  /* 4. Navegación en 2 columnas para que sea fácil tocar con el dedo */
-  nav ul {
-    flex-wrap: wrap; 
-    gap: 10px;
+  /* El truco para bajar la imagen de la PC sin Flexbox */
+  #subtitle::after {
+    display: block;            /* Convierte la imagen en un bloque */
+    margin: 15px auto 0 auto;  /* La centra y la empuja a la línea de abajo */
   }
 
-  nav li.button {
-    flex: 1 1 45%; /* Dos botones por fila */
-    padding: 8px 0;
-    border: 1px solid rgba(0,0,0,0.1); /* Opcional: para que parezcan más botones */
+  /* 4. Navegación: Botones en bloque (apilados) */
+  nav {
+    width: 100%;
+    padding: 1rem 0;
   }
 
-  /* 5. Secciones internas */
+  .button {
+    display: block;          /* Pone cada botón en su propia línea */
+    width: 80%;              /* No tan anchos para que se vean bien */
+    margin: 15px auto;       /* Centrados con espacio vertical */
+    padding: 12px 0;
+    border: 1px solid rgb(179, 127, 90); /* Borde para que parezcan botones táctiles */
+    background-color: rgba(179, 127, 90, 0.1); /* Ligero fondo */
+  }
+
+  /* 5. Sección de Intereses */
   #interests-section {
-    width: 98%;
-    padding: 1.5rem 0;
+    width: 100%;
+    padding: 1rem 0.5rem;
   }
 
-  #list-interests {
-    flex-direction: column; /* Los intereses se enlistan uno bajo otro */
-    align-items: center;
-    gap: 10px;
+  #interests-section li {
+    display: block;          /* Pone la lista de intereses en vertical */
+    margin: 15px auto;
   }
 
-  /* 6. Ajuste de textos para legibilidad */
+  /* 6. Textos: Mejor legibilidad en pantallas estrechas */
   #paragraph, #paragraph2 {
-    text-align: left; /* En móviles muy pequeños, el justify a veces deja huecos feos */
+    text-align: left; /* El texto justificado en celulares crea huecos horribles */
     font-size: 1rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
